@@ -17,6 +17,8 @@ public final class FileSum {
      * @exception IllegalStateException Utility class.
      * @see IllegalStateException
      */
+    private static final int MAX_VALUE = 100;
+
     private FileSum() {
         throw new IllegalStateException("Utility Class");
     }
@@ -37,8 +39,8 @@ public final class FileSum {
         FileWriter outputFile = new FileWriter("output.txt");
         ArrayList<Integer> numberList = new ArrayList<>();
         Random random = new Random();
-        for (int counter = 0; counter < 100; counter++) {
-            int randomNumber = random.nextInt(100);
+        for (int counter = 0; counter < MAX_VALUE; counter++) {
+            int randomNumber = random.nextInt(MAX_VALUE);
             numberList.add(randomNumber);
             inputFile.write(randomNumber + "\n");
         }
